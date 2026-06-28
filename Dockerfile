@@ -16,9 +16,18 @@ WORKDIR /app
 COPY --from=vendor /app/vendor ./vendor
 COPY . .
 
-RUN curl -o /app/public/frontend/Default/js/jquery-3.4.1.min.js https://code.jquery.com/jquery-3.4.1.min.js
-
 RUN npm install && npm run production
+
+# Fix corrupted JS files
+RUN curl -o /app/public/frontend/Default/js/jquery-3.4.1.min.js https://code.jquery.com/jquery-3.4.1.min.js
+RUN curl -o /app/public/woocasino/js/angular.min.js https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js
+RUN curl -o /app/public/woocasino/js/angular-lazy-img.min.js https://cdn.jsdelivr.net/npm/angular-lazy-img@0.3.3/release/angular-lazy-img.min.js
+RUN curl -o /app/public/woocasino/js/sweetalert.min.js https://cdn.jsdelivr.net/npm/sweetalert@2.1.2/dist/sweetalert.min.js
+RUN curl -o /app/public/woocasino/js/perfect-scrollbar.jquery.js https://cdn.jsdelivr.net/npm/perfect-scrollbar@0.8.1/dist/js/perfect-scrollbar.jquery.min.js
+RUN curl -o /app/public/woocasino/js/jquery-1.7.1.min.js https://code.jquery.com/jquery-1.7.1.min.js
+RUN curl -o /app/public/woocasino/js/respond.min.js https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js
+RUN curl -o /app/public/woocasino/js/html5shiv.min.js https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js
+RUN curl -o /app/public/woocasino/js/zebra_datepicker.min.js https://cdn.jsdelivr.net/npm/zebra_datepicker/dist/zebra_datepicker.min.js
 
 RUN mkdir -p storage/framework/{sessions,views,cache,testing} storage/logs bootstrap/cache \
     && chmod -R a+rw storage bootstrap/cache \
