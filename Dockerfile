@@ -26,4 +26,6 @@ RUN mkdir -p storage/framework/{sessions,views,cache,testing} storage/logs boots
 
 EXPOSE 80
 
+RUN echo 'APP_NAME=ApexBet\nAPP_ENV=production\nAPP_KEY=base64:X4Y7mK9pQrN2vL8wJ3hF6tA1sE5uC0dG\nAPP_DEBUG=false\nAPP_URL=https://apex-casino-gambling-production.up.railway.app\nDB_CONNECTION=mysql\nDB_HOST=reseau.proxy.rlwy.net\nDB_PORT=57029\nDB_DATABASE=railway\nDB_USERNAME=root\nDB_PASSWORD=RCPLfoFNdCDVnFmrovpRPqsXXaruwLgF\nCACHE_DRIVER=file\nSESSION_DRIVER=file\nQUEUE_CONNECTION=sync' > /app/.env
+
 CMD ["sh", "-c", "php artisan config:cache && php artisan route:cache && frankenphp run --config /app/Caddyfile"]
