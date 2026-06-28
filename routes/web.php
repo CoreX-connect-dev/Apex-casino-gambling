@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 // ---- Static Pages ----
-Route::get('/', ['uses' => 'Web\Frontend\GamesController@index', 'as' => 'frontend.game.list']);
+Route::get('/category/{category}', ['uses' => 'Web\Frontend\GamesController@index', 'as' => 'frontend.game.list.category']);
 Route::get('/games/{category1?}/{category2?}', ['uses' => 'Web\Frontend\GamesController@index', 'as' => 'frontend.games.category']);
 Route::get('/search', ['uses' => 'Web\Frontend\GamesController@search', 'as' => 'frontend.games.search']);
 Route::post('/search', ['uses' => 'Web\Frontend\GamesController@search_json', 'as' => 'frontend.games.search_json']);
