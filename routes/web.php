@@ -14,7 +14,7 @@ Route::get('/', ['uses' => 'Web\Frontend\GamesController@index', 'as' => 'fronte
 // ---- Static Pages ----
 Route::get('/category/{category}', ['uses' => 'Web\Frontend\GamesController@index', 'as' => 'frontend.game.list.category']);
 Route::get('/games/{category1?}/{category2?}', ['uses' => 'Web\Frontend\GamesController@index', 'as' => 'frontend.games.category']);
-Route::get('/search', ['uses' => 'Web\Frontend\GamesController@search', 'as' => 'frontend.games.search']);
+Route::get('/search', ['uses' => 'Web\Frontend\GamesController@search', 'as' => 'frontend.game.search']);
 Route::post('/search', ['uses' => 'Web\Frontend\GamesController@search_json', 'as' => 'frontend.games.search_json']);
 Route::get('/pages/{slug}', ['uses' => 'Web\Frontend\PagesController@show', 'as' => 'frontend.pages.show']);
 Route::get('/tournaments', ['uses' => 'Web\Frontend\TournamentsController@index', 'as' => 'frontend.tournaments.index']);
