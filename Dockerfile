@@ -16,6 +16,8 @@ WORKDIR /app
 COPY --from=vendor /app/vendor ./vendor
 COPY . .
 
+RUN curl -o /app/public/frontend/Default/js/jquery-3.4.1.min.js https://code.jquery.com/jquery-3.4.1.min.js
+
 RUN npm install && npm run production
 
 RUN mkdir -p storage/framework/{sessions,views,cache,testing} storage/logs bootstrap/cache \
