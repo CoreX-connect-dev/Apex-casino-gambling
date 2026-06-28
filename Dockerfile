@@ -5,7 +5,7 @@ RUN apt-get update && apt-get install -y unzip git \
 
 WORKDIR /app
 COPY composer.json composer.lock ./
-RUN mkdir -p database/seeds database/seeders \
+RUN mkdir -p database/seeds database/seeders database/factories database/migrations \
     && composer install --no-dev --optimize-autoloader --no-interaction --no-scripts --ignore-platform-reqs
 
 FROM dunglas/frankenphp:php8.2-bookworm
@@ -17,7 +17,7 @@ COPY . .
 
 RUN mkdir -p storage/framework/{sessions,views,cache,testing} storage/logs bootstrap/cache \
     && chmod -R a+rw storage bootstrap/cache \
-    && mkdir -p database/seeds database/seeders
+    && mkdir -p database/seeds database/seeders database/factories database/migrations
 
 RUN php artisan config:cache \
     && php artisan event:cache \
