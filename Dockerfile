@@ -26,4 +26,4 @@ RUN mkdir -p storage/framework/{sessions,views,cache,testing} storage/logs boots
 
 EXPOSE 80
 
-CMD ["sh", "-c", "php artisan config:cache && php artisan route:cache && php artisan view:cache && frankenphp run --config /etc/caddy/Caddyfile"]
+CMD ["sh", "-c", "php artisan config:cache && php artisan route:cache && frankenphp run --config /etc/caddy/Caddyfile"]
