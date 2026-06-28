@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 */
 
+// ---- Homepage ----
+Route::get('/', ['uses' => 'Web\Frontend\GamesController@index', 'as' => 'frontend.game.list']);
+
 // ---- Static Pages ----
 Route::get('/category/{category}', ['uses' => 'Web\Frontend\GamesController@index', 'as' => 'frontend.game.list.category']);
 Route::get('/games/{category1?}/{category2?}', ['uses' => 'Web\Frontend\GamesController@index', 'as' => 'frontend.games.category']);
@@ -86,10 +89,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/profile/responsible/limits',  ['uses' => 'Web\Frontend\Responsible\ResponsibleController@limits',  'as' => 'frontend.responsible.limits']);
     Route::post('/profile/responsible/session', ['uses' => 'Web\Frontend\Responsible\ResponsibleController@session', 'as' => 'frontend.responsible.session']);
     Route::post('/profile/responsible/reality', ['uses' => 'Web\Frontend\Responsible\ResponsibleController@reality', 'as' => 'frontend.responsible.reality']);
-
-    // Support Tickets
-    // Route::post('/support/create', ['uses' => 'Web\Frontend\TicketController@store', 'as' => 'frontend.support.store']);
-    // Route::get('/support/{ticket}',['uses' => 'Web\Frontend\TicketController@show',  'as' => 'frontend.support.show']);
 });
 
 /*
@@ -313,10 +312,4 @@ Route::group([
     Route::get('/invites',                   ['uses' => 'DashboardController@invites',   'as' => 'invite.list']);
     Route::post('/invites',                  ['uses' => 'DashboardController@invite_update',   'as' => 'invite.store']);
     Route::get('/invites/status/{status}',   ['uses' => 'DashboardController@invite_status', 'as' => 'invite.status']);
-
-    // Bonus Preset
-    // Route::get('/bonus-preset',              ['uses' => 'BonusPresetController@index',   'as' => 'bonuspreset.list']);
-    // Route::post('/bonus-preset',             ['uses' => 'BonusPresetController@store',   'as' => 'bonuspreset.store']);
-    // Route::put('/bonus-preset/{bp}',         ['uses' => 'BonusPresetController@update',  'as' => 'bonuspreset.update']);
-    // Route::delete('/bonus-preset/{bp}',      ['uses' => 'BonusPresetController@destroy', 'as' => 'bonuspreset.destroy']);
 });
