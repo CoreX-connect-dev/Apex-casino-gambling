@@ -1,7 +1,11 @@
-FROM composer:2 AS vendor
+FROM php:8.2-cli AS vendor
+
+RUN apt-get update && apt-get install -y unzip git \
+    && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
 WORKDIR /app
 COPY composer.json composer.lock ./
-RUN composer install --no-dev --optimize-autoloader --no-interaction --no-scripts
+RUN composer install --no-dev --optimize-autoloader --no-interaction --no-scripts --ignore-platform-reqs
 
 FROM dunglas/frankenphp:php8.2-bookworm
 
