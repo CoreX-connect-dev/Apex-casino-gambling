@@ -10,6 +10,11 @@ RUN mkdir -p database/seeds database/seeders database/factories database/migrati
 
 FROM dunglas/frankenphp:php8.2-bookworm
 
+RUN apt-get update && apt-get install -y \
+    libpng-dev libjpeg-dev libfreetype6-dev libzip-dev libonig-dev \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install pdo pdo_mysql mbstring gd zip bcmath opcache
+
 WORKDIR /app
 
 COPY --from=vendor /app/vendor ./vendor
@@ -21,4 +26,4 @@ RUN mkdir -p storage/framework/{sessions,views,cache,testing} storage/logs boots
 
 EXPOSE 80
 
-CMD php artisan config:cache && php artisan route:cache && php artisan view:cache && frankenphp run --config /etc/caddy/Caddyfile
+CMD ["sh", "-c", "php artisan config:cache && php artisan route:cache && php artisan view:cache && frankenphp run --config /etc/caddy/Caddyfile"]
