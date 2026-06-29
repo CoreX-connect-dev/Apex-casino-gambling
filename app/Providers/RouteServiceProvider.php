@@ -18,7 +18,7 @@ class RouteServiceProvider extends ServiceProvider
      * In addition, it is set as the URL generator's root namespace.
      * @var string
      */
-    protected $webNamespace = 'VanguardLTE\Http\Controllers\Web';
+    protected $webNamespace = 'VanguardLTE\Http\Controllers';
 
     /**
      * This namespace is applied to the controller routes in your api routes file.

@@ -8,17 +8,20 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 */
 
-// ---- Static Pages ----
+// ---- Homepage ----
 Route::get('/', ['uses' => 'Web\Frontend\GamesController@index', 'as' => 'frontend.game.list']);
+
+// ---- Static Pages ----
+Route::get('/category/{category}', ['uses' => 'Web\Frontend\GamesController@index', 'as' => 'frontend.game.list.category']);
 Route::get('/games/{category1?}/{category2?}', ['uses' => 'Web\Frontend\GamesController@index', 'as' => 'frontend.games.category']);
-Route::get('/search', ['uses' => 'Web\Frontend\GamesController@search', 'as' => 'frontend.games.search']);
+Route::get('/search', ['uses' => 'Web\Frontend\GamesController@search', 'as' => 'frontend.game.search']);
 Route::post('/search', ['uses' => 'Web\Frontend\GamesController@search_json', 'as' => 'frontend.games.search_json']);
 Route::get('/pages/{slug}', ['uses' => 'Web\Frontend\PagesController@show', 'as' => 'frontend.pages.show']);
 Route::get('/tournaments', ['uses' => 'Web\Frontend\TournamentsController@index', 'as' => 'frontend.tournaments.index']);
 Route::get('/tournaments/{tournament}', ['uses' => 'Web\Frontend\TournamentsController@show', 'as' => 'frontend.tournaments.show']);
 Route::get('/progress', ['uses' => 'Web\Frontend\GamesController@progress', 'as' => 'frontend.progress']);
 Route::get('/bonuses', ['uses' => 'Web\Frontend\GamesController@bonuses', 'as' => 'frontend.bonuses']);
-Route::get('/bonus-conditions', ['uses' => 'Web\Frontend\GamesController@bonus_conditions', 'as' => 'frontend.bonus_conditions']);
+Route::get('/bonus-conditions', ['uses' => 'Web\Frontend\GamesController@bonus_conditions', 'as' => 'frontend.bonus.conditions']);
 Route::get('/faq', ['uses' => 'Web\Frontend\GamesController@faq', 'as' => 'frontend.faq']);
 
 // ---- Game Routes ----
@@ -34,16 +37,16 @@ Route::get('/login',                ['uses' => 'Web\Frontend\Auth\AuthController
 Route::post('/login',               ['uses' => 'Web\Frontend\Auth\AuthController@postLogin',   'as' => 'frontend.auth.login.post']);
 Route::get('/logout',               ['uses' => 'Web\Frontend\Auth\AuthController@getLogout',   'as' => 'frontend.auth.logout']);
 Route::get('/register',             ['uses' => 'Web\Frontend\Auth\AuthController@getRegister', 'as' => 'frontend.auth.register']);
-Route::post('/register',            ['uses' => 'Web\Frontend\Auth\AuthController@postRegister','as' => 'frontend.auth.register.post']);
+Route::post('/register',            ['uses' => 'Web\Frontend\Auth\AuthController@postRegister','as' => 'frontend.register.post']);
 Route::get('/confirm-email/{token}',['uses' => 'Web\Frontend\Auth\AuthController@confirmEmail','as' => 'frontend.auth.confirm-email']);
 Route::get('/specauth/{user}',      ['uses' => 'Web\Frontend\Auth\AuthController@specauth',    'as' => 'frontend.auth.specauth']);
 Route::get('/apilogin/{game}/{token}',['uses' => 'Web\Frontend\Auth\AuthController@apiLogin',  'as' => 'frontend.auth.apilogin']);
 
 // ---- Password Reset ----
 Route::get('/password/remind',      ['uses' => 'Web\Frontend\Auth\PasswordController@getRemind',   'as' => 'frontend.auth.password.remind']);
-Route::post('/password/remind',     ['uses' => 'Web\Frontend\Auth\PasswordController@postRemind',  'as' => 'frontend.auth.password.remind.post']);
+Route::post('/password/remind',     ['uses' => 'Web\Frontend\Auth\PasswordController@postRemind',  'as' => 'frontend.password.remind.post']);
 Route::get('/password/reset/{token}',['uses' => 'Web\Frontend\Auth\PasswordController@getReset',  'as' => 'frontend.auth.password.reset']);
-Route::post('/password/reset',      ['uses' => 'Web\Frontend\Auth\PasswordController@postReset',  'as' => 'frontend.auth.password.reset.post']);
+Route::post('/password/reset',      ['uses' => 'Web\Frontend\Auth\PasswordController@postReset',  'as' => 'frontend.password.reset.post']);
 
 // ---- SMS Verification ----
 Route::post('/sms/callback',        ['uses' => 'Web\Frontend\SMSController@callback', 'as' => 'sms.callback']);
@@ -58,7 +61,7 @@ Route::group(['middleware' => ['auth']], function () {
     // Profile
     Route::get('/profile',                    ['uses' => 'Web\Frontend\ProfileController@index',           'as' => 'frontend.profile.index']);
     Route::post('/profile/update',            ['uses' => 'Web\Frontend\ProfileController@updateDetails',   'as' => 'frontend.profile.update']);
-    Route::post('/profile/password',          ['uses' => 'Web\Frontend\ProfileController@updatePassword',  'as' => 'frontend.profile.password']);
+    Route::post('/profile/password',          ['uses' => 'Web\Frontend\ProfileController@updatePassword',  'as' => 'frontend.profile.update.password']);
     Route::post('/profile/avatar',            ['uses' => 'Web\Frontend\ProfileController@updateAvatar',    'as' => 'frontend.profile.avatar']);
     Route::get('/profile/sessions',           ['uses' => 'Web\Frontend\ProfileController@sessions',        'as' => 'frontend.profile.sessions']);
     Route::delete('/profile/sessions/{id}',   ['uses' => 'Web\Frontend\ProfileController@invalidateSession','as' => 'frontend.profile.sessions.invalidate']);
@@ -86,10 +89,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/profile/responsible/limits',  ['uses' => 'Web\Frontend\Responsible\ResponsibleController@limits',  'as' => 'frontend.responsible.limits']);
     Route::post('/profile/responsible/session', ['uses' => 'Web\Frontend\Responsible\ResponsibleController@session', 'as' => 'frontend.responsible.session']);
     Route::post('/profile/responsible/reality', ['uses' => 'Web\Frontend\Responsible\ResponsibleController@reality', 'as' => 'frontend.responsible.reality']);
-
-    // Support Tickets
-    // Route::post('/support/create', ['uses' => 'Web\Frontend\TicketController@store', 'as' => 'frontend.support.store']);
-    // Route::get('/support/{ticket}',['uses' => 'Web\Frontend\TicketController@show',  'as' => 'frontend.support.show']);
 });
 
 /*
@@ -313,10 +312,8 @@ Route::group([
     Route::get('/invites',                   ['uses' => 'DashboardController@invites',   'as' => 'invite.list']);
     Route::post('/invites',                  ['uses' => 'DashboardController@invite_update',   'as' => 'invite.store']);
     Route::get('/invites/status/{status}',   ['uses' => 'DashboardController@invite_status', 'as' => 'invite.status']);
-
-    // Bonus Preset
-    // Route::get('/bonus-preset',              ['uses' => 'BonusPresetController@index',   'as' => 'bonuspreset.list']);
-    // Route::post('/bonus-preset',             ['uses' => 'BonusPresetController@store',   'as' => 'bonuspreset.store']);
-    // Route::put('/bonus-preset/{bp}',         ['uses' => 'BonusPresetController@update',  'as' => 'bonuspreset.update']);
-    // Route::delete('/bonus-preset/{bp}',      ['uses' => 'BonusPresetController@destroy', 'as' => 'bonuspreset.destroy']);
 });
+
+// Additional route aliases for blade compatibility
+Route::get('/pincodes', ['uses' => 'Web\Frontend\ProfileController@pincodes', 'as' => 'frontend.pincode.list']);
+Route::post('/profile/sms', ['uses' => 'Web\Frontend\ProfileController@sms', 'as' => 'frontend.profile.sms']);
