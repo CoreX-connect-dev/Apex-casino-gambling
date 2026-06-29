@@ -51,6 +51,7 @@
 
     <link href="/woocasino/css/regional.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="/woocasino/css/oct7vfe.css">
+    <link href="/css/custom.css" rel="stylesheet" type="text/css"/>
 
     <!-- DEFAULT JS SCRIPTS -->
     <!--[if lt IE 9]>

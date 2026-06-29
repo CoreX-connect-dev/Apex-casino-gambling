@@ -1,0 +1,27 @@
+/* Custom CSS for UI improvements */
+
+/* Set a more flexible box-sizing model */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* Responsive images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Basic mobile-first styles */
+.section_main {
+  padding: 1rem;
+}
+
+/* Example of a media query for larger screens */
+@media screen and (min-width: 768px) {
+  .section_main {
+    padding: 2rem;
+  }
+}
