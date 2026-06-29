@@ -19,6 +19,50 @@ img {
   padding: 1rem;
 }
 
+/* Hamburger Menu */
+.hamburger-menu {
+  display: none; /* Hidden by default */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.hamburger-menu span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 5px 0;
+}
+
+/* Mobile styles */
+@media screen and (max-width: 768px) {
+  .hamburger-menu {
+    display: block; /* Show on mobile */
+  }
+
+  .top-bar__content {
+    display: none; /* Hide desktop nav on mobile */
+  }
+
+  .mobile-menu {
+    display: none; /* Hidden by default */
+  }
+
+  .mobile-menu.is-active {
+    display: block; /* Show when active */
+  }
+}
+
+/* Desktop styles */
+@media screen and (min-width: 769px) {
+  .sticky-games-menu-mob,
+  .mobile-menu {
+    display: none; /* Hide mobile menus on desktop */
+  }
+}
+
 /* Example of a media query for larger screens */
 @media screen and (min-width: 768px) {
   .section_main {

@@ -95,6 +95,11 @@
         @include('frontend.Default.partials.header_not_logged')
     @endif
     <div class="top-bar">
+        <button class="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         <!-- jackpot -->
 
         <div style="display: flex;width: calc(100% - 350px);">
@@ -325,6 +330,10 @@
     })
     $('.providers-mob__btn').click(function(){
         $(this).parent().toggleClass('open')
+    })
+
+    $('.hamburger-menu').click(function(){
+        $('.mobile-menu').toggleClass('is-active');
     })
 </script>
 
