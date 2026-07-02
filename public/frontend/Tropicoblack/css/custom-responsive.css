@@ -1,0 +1,17 @@
+/* Custom Responsive Styles */
+
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    #main-menu .navbar-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #jackpots .col-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
