@@ -5,25 +5,25 @@
     <meta charset="utf-8">
     <title>@yield('page-title') - {{ settings('app_name') }}</title>
     <meta name="viewport" content="width=device-width">
-    <link rel="icon" href="/frontend/Tropicoblack/img/favicon.png">
-    <link rel="stylesheet" href="/frontend/Tropicoblack/css/slick.css">
+    <link rel="icon" href="{{ asset('frontend/Tropicoblack/img/favicon.png') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/Tropicoblack/css/slick.css') }}">
     <meta name="theme-color" content="#4285f4">
-    <link rel="stylesheet" href="/frontend/Tropicoblack/css/styles.min.css">
-    <link rel="stylesheet" href="/frontend/Tropicoblack/css/custom-responsive.css">
+    <link rel="stylesheet" href="{{ asset('frontend/Tropicoblack/css/styles.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/Tropicoblack/css/custom-responsive.css') }}">
     <!-- jQuery loaded ONCE -->
-    <script src="/frontend/Tropicoblack/assets/vendors/jquery/3.4.1/jquery-3.4.1.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="/frontend/Tropicoblack/assets/vendors/google/css/roboto.css"/>
-    <link rel="stylesheet" type="text/css" href="/frontend/Tropicoblack/assets/vendors/bootstrap/4.3.1/css/bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="/frontend/Tropicoblack/assets/vendors/swiper/4.5.0/css/swiper.min.css"/>
-    <link rel="stylesheet" type="text/css" href="/frontend/Tropicoblack/assets/vendors/odometer/0.4.6/css/odometer-theme-default.css"/>
-    <link rel="stylesheet" type="text/css" href="/frontend/Tropicoblack/assets/vendors/bootstrap-select/1.13.9/css/bootstrap-select.min.css"/>
-    <link rel="stylesheet" type="text/css" href="/frontend/Tropicoblack/assets/vendors/flag-icon-css/3.3.0/css/flag-icon.min.css"/>
-    <link rel="stylesheet" type="text/css" href="/frontend/Tropicoblack/assets/vendors/flaticon/flaticon.css"/>
-    <link rel="stylesheet" type="text/css" href="/frontend/Tropicoblack/assets/vendors/fontawesome/5.10.1/css/all.min.css"/>
-    <link rel="stylesheet" type="text/css" href="/frontend/Tropicoblack/css/alertify.min.css"/>
-    <link rel="stylesheet" type="text/css" href="/frontend/Tropicoblack/css/pisoglentis.css"/>
-    <link rel="stylesheet" type="text/css" href="/frontend/Tropicoblack/css/custom.css"/>
-    <link rel="stylesheet" type="text/css" href="/frontend/Tropicoblack/assets/css/main-black.css"/>
+    <script src="{{ asset('frontend/Tropicoblack/assets/vendors/jquery/3.4.1/jquery-3.4.1.min.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ asset('frontend/Tropicoblack/assets/vendors/google/css/roboto.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('frontend/Tropicoblack/assets/vendors/bootstrap/4.3.1/css/bootstrap.min.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('frontend/Tropicoblack/assets/vendors/swiper/4.5.0/css/swiper.min.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('frontend/Tropicoblack/assets/vendors/odometer/0.4.6/css/odometer-theme-default.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('frontend/Tropicoblack/assets/vendors/bootstrap-select/1.13.9/css/bootstrap-select.min.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('frontend/Tropicoblack/assets/vendors/flag-icon-css/3.3.0/css/flag-icon.min.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('frontend/Tropicoblack/assets/vendors/flaticon/flaticon.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('frontend/Tropicoblack/assets/vendors/fontawesome/5.10.1/css/all.min.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('frontend/Tropicoblack/css/alertify.min.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('frontend/Tropicoblack/css/pisoglentis.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('frontend/Tropicoblack/css/custom.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('frontend/Tropicoblack/assets/css/main-black.css') }}"/>
 </head>
 
 <body data-type="public">
@@ -36,7 +36,7 @@
     </div>
     <div class="sidebar-header">
         <h3 class="text-center">
-            <img src="/frontend/Tropicoblack/assets/images/ui/tropicana88_logo-bg.png" alt="logo" class="sidebar-logo"/>
+            <img src="{{ asset('frontend/Tropicoblack/assets/images/ui/tropicana88_logo-bg.png') }}" alt="logo" class="sidebar-logo"/>
         </h3>
         <div class="container text-center">
             <select class="selectpicker" id="lang" data-width="fit">
@@ -81,7 +81,7 @@
             </div>
             <div class="d-none d-md-block col-sm-4 p-0 text-center text-sm-left">
                 <a href="" class="pl-2">
-                    <img src="/frontend/Tropicoblack/assets/images/ui/tropicana88_logo-bg.png" alt="logo" class="navbar-logo"/>
+                    <img src="{{ asset('frontend/Tropicoblack/assets/images/ui/tropicana88_logo-bg.png') }}" alt="logo" class="navbar-logo"/>
                 </a>
             </div>
             <div class="col-10 col-sm-6 text-sm-right text-center">
@@ -113,19 +113,19 @@
             <div class="col-lg-3 pb-1 my-auto"></div>
             <div class="col-4 col-lg-2 pb-1 my-auto">
                 <div class="jackpot-container align-middle w-100 m-auto text-right">
-                    <img src="/frontend/Tropicoblack/assets/images/ui/jackpot-icon-1.png" alt="jackpot-icon" class="jackpot-icon float-left"/>
+                    <img src="{{ asset('frontend/Tropicoblack/assets/images/ui/jackpot-icon-1.png') }}" alt="jackpot-icon" class="jackpot-icon float-left"/>
                     <div class="odometer jackpot-elem1"></div>
                 </div>
             </div>
             <div class="col-4 col-lg-2 pb-1 my-auto">
                 <div class="jackpot-container align-middle w-100 m-auto text-right">
-                    <img src="/frontend/Tropicoblack/assets/images/ui/jackpot-icon-2.png" alt="jackpot-icon" class="jackpot-icon float-left"/>
+                    <img src="{{ asset('frontend/Tropicoblack/assets/images/ui/jackpot-icon-2.png') }}" alt="jackpot-icon" class="jackpot-icon float-left"/>
                     <div class="odometer jackpot-elem2"></div>
                 </div>
             </div>
             <div class="col-4 col-lg-2 pb-1 my-auto">
                 <div class="jackpot-container align-middle w-100 m-auto text-right">
-                    <img src="/frontend/Tropicoblack/assets/images/ui/jackpot-icon-3.png" alt="jackpot-icon" class="jackpot-icon float-left"/>
+                    <img src="{{ asset('frontend/Tropicoblack/assets/images/ui/jackpot-icon-3.png') }}" alt="jackpot-icon" class="jackpot-icon float-left"/>
                     <div class="odometer jackpot-elem3"></div>
                 </div>
             </div>
@@ -176,7 +176,7 @@
                                     @if (in_array($category->href, $companies))
                                     <li class="nav-item mr-2 ml-2 box active" data-category="{{ $category->id }}">
                                         <a href="javascript: void(0);">
-                                            <img style="filter:brightness(0) invert(1);" class="nav-item-img" src="/frontend/Tropicoblack/img/companies/{{ $category->href }}.png">
+                                            <img style="filter:brightness(0) invert(1);" class="nav-item-img" src="{{ asset('frontend/Tropicoblack/img/companies/' . $category->href . '.png') }}">
                                         </a>
                                     </li>
                                     @endif
@@ -191,17 +191,17 @@
 
     <script>
         var GLOBAL_BANNERS_LIST = {
-            slide1: "/frontend/Tropicoblack/assets/images/slides/1.jpg",
-            slide2: "/frontend/Tropicoblack/assets/images/slides/2.jpg",
-            slide3: "/frontend/Tropicoblack/assets/images/slides/3b.jpg",
-            slide4: "/frontend/Tropicoblack/assets/images/slides/4.jpg",
-            slide5: "/frontend/Tropicoblack/assets/images/slides/5.jpg",
-            slide6: "/frontend/Tropicoblack/assets/images/slides/6.jpg",
-            slide7: "/frontend/Tropicoblack/assets/images/slides/7.jpg",
-            slide8: "/frontend/Tropicoblack/assets/images/slides/8.jpg",
-            slide9: "/frontend/Tropicoblack/assets/images/slides/9.jpg",
-            slide10: "/frontend/Tropicoblack/assets/images/slides/10.jpg",
-            slide11: "/frontend/Tropicoblack/assets/images/slides/11.jpg"
+            slide1: "{{ asset('frontend/Tropicoblack/assets/images/slides/1.jpg') }}",
+            slide2: "{{ asset('frontend/Tropicoblack/assets/images/slides/2.jpg') }}",
+            slide3: "{{ asset('frontend/Tropicoblack/assets/images/slides/3b.jpg') }}",
+            slide4: "{{ asset('frontend/Tropicoblack/assets/images/slides/4.jpg') }}",
+            slide5: "{{ asset('frontend/Tropicoblack/assets/images/slides/5.jpg') }}",
+            slide6: "{{ asset('frontend/Tropicoblack/assets/images/slides/6.jpg') }}",
+            slide7: "{{ asset('frontend/Tropicoblack/assets/images/slides/7.jpg') }}",
+            slide8: "{{ asset('frontend/Tropicoblack/assets/images/slides/8.jpg') }}",
+            slide9: "{{ asset('frontend/Tropicoblack/assets/images/slides/9.jpg') }}",
+            slide10: "{{ asset('frontend/Tropicoblack/assets/images/slides/10.jpg') }}",
+            slide11: "{{ asset('frontend/Tropicoblack/assets/images/slides/11.jpg') }}"
         };
     </script>
     <!-- END MAIN MENU -->
@@ -216,7 +216,7 @@
             <div class="col-12 col-md-3 p-0 border-container">
                 <h5 class="text-center p-2">&nbsp;</h5>
                 <div class="container text-center">
-                    <img src="/frontend/Tropicoblack/assets/images/ui/devices.png" alt="" class="w-50 mb-1"/>
+                    <img src="{{ asset('frontend/Tropicoblack/assets/images/ui/devices.png') }}" alt="" class="w-50 mb-1"/>
                     <br/>
                     <h6>Now available on all devices</h6>
                     <h6>Desktop - Tablet - Mobile</h6>
@@ -231,7 +231,7 @@
             <div class="col-12 col-md-3 p-0 border-container">
                 <h5 class="text-center p-2">Play Safe</h5>
                 <div class="container text-center">
-                    <img src="/frontend/Tropicoblack/assets/images/ui/secure_website.png" alt="" class="w-50 mb-1"/>
+                    <img src="{{ asset('frontend/Tropicoblack/assets/images/ui/secure_website.png') }}" alt="" class="w-50 mb-1"/>
                     <p class="text-justify">
                         The Online Casino has a legal permission to conduct online gambling on the basis of the international License.
                         <br/>We understand that ensuring the fair game is one of the most important conditions for the casino operation.
@@ -246,7 +246,7 @@
                     <div class="row m-0">
                         @foreach(['q1x2gaming','amatic','bomba','egt','netent','novomatic','spin2win','wazdan'] as $vendor)
                         <div class="col-6 col-md-12 p-0 text-center">
-                            <a href="#"><img src="/frontend/Tropicoblack/assets/images/vendors/shadow/{{ $vendor }}.png" alt="{{ $vendor }}" style="max-width: 100px;"/></a>
+                            <a href="#"><img src="{{ asset('frontend/Tropicoblack/assets/images/vendors/shadow/' . $vendor . '.png') }}" alt="{{ $vendor }}" style="max-width: 100px;"/></a>
                         </div>
                         @endforeach
                     </div>
@@ -258,7 +258,7 @@
                 <div class="row m-0">
                     @foreach(['facebook','twitter','youtube','instagram','linkedin','pinterest'] as $social)
                     <div class="col-6 p-0 text-center">
-                        <a href="#"><img src="/frontend/Tropicoblack/assets/images/ui/{{ $social }}.png" alt="{{ $social }}" class="p-2" style="max-width: 64px;"/></a>
+                        <a href="#"><img src="{{ asset('frontend/Tropicoblack/assets/images/ui/' . $social . '.png') }}" alt="{{ $social }}" class="p-2" style="max-width: 64px;"/></a>
                     </div>
                     @endforeach
                 </div>
@@ -267,7 +267,7 @@
                 <h5 class="text-center p-2">Contact Us</h5>
                 <div class="container text-center">
                     <h6>24/7 Support</h6>
-                    <img src="/frontend/Tropicoblack/assets/images/ui/18plus.png" alt="" class="mb-1" style="max-width: 64px;"/>
+                    <img src="{{ asset('frontend/Tropicoblack/assets/images/ui/18plus.png') }}" alt="" class="mb-1" style="max-width: 64px;"/>
                 </div>
                 <div class="container mt-5 text-center">
                     <h6>Gambling can be addictive.<br/>Please play responsibly.</h6>
@@ -303,19 +303,19 @@
                     <div class="col-lg-3 pb-1 my-auto"></div>
                     <div class="col-4 col-lg-2 pb-1 my-auto">
                         <div class="jackpot-container align-middle w-100 m-auto text-right">
-                            <img src="/frontend/Tropicoblack/assets/images/ui/jackpot-icon-1.png" alt="jackpot-icon" class="jackpot-icon float-left"/>
+                            <img src="{{ asset('frontend/Tropicoblack/assets/images/ui/jackpot-icon-1.png') }}" alt="jackpot-icon" class="jackpot-icon float-left"/>
                             <div class="odometer pisoglentis jackpot-elem1"></div>
                         </div>
                     </div>
                     <div class="col-4 col-lg-2 pb-1 my-auto">
                         <div class="jackpot-container align-middle w-100 m-auto text-right">
-                            <img src="/frontend/Tropicoblack/assets/images/ui/jackpot-icon-2.png" alt="jackpot-icon" class="jackpot-icon float-left"/>
+                            <img src="{{ asset('frontend/Tropicoblack/assets/images/ui/jackpot-icon-2.png') }}" alt="jackpot-icon" class="jackpot-icon float-left"/>
                             <div class="odometer pisoglentis jackpot-elem2"></div>
                         </div>
                     </div>
                     <div class="col-4 col-lg-2 pb-1 my-auto">
                         <div class="jackpot-container align-middle w-100 m-auto text-right">
-                            <img src="/frontend/Tropicoblack/assets/images/ui/jackpot-icon-3.png" alt="jackpot-icon" class="jackpot-icon float-left"/>
+                            <img src="{{ asset('frontend/Tropicoblack/assets/images/ui/jackpot-icon-3.png') }}" alt="jackpot-icon" class="jackpot-icon float-left"/>
                             <div class="odometer pisoglentis jackpot-elem3"></div>
                         </div>
                     </div>
@@ -419,7 +419,7 @@
             </div>
             <div class="modal-body p-3">
                 <div class="w-100 text-center mb-4">
-                    <img src="/frontend/Tropicoblack/img/ticket_logo.png" alt="logo"/>
+                    <img src="{{ asset('frontend/Tropicoblack/img/ticket_logo.png') }}" alt="logo"/>
                 </div>
                 <form id="ticket-form" action="#" method="post">
                     <div class="custom-input-group mb-2">
@@ -555,18 +555,18 @@
     };
 </script>
 
-<script src="/frontend/Tropicoblack/js/jquery-ui.js"></script>
-<script src="/frontend/Tropicoblack/assets/vendors/popper/1.14.7/popper.min.js"></script>
-<script src="/frontend/Tropicoblack/assets/vendors/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<script src="/frontend/Tropicoblack/assets/vendors/swiper/4.5.0/js/swiper.min.js"></script>
-<script src="/frontend/Tropicoblack/assets/vendors/odometer/0.4.6/js/odometer.min.js"></script>
-<script src="/frontend/Tropicoblack/assets/vendors/bootstrap-select/1.13.9/js/bootstrap-select.min.js"></script>
-<script src="/frontend/Tropicoblack/js/alertify.min.js?v=8324"></script>
-<script src="/frontend/Tropicoblack/js/bonus.min.js?v=8324"></script>
-<script src="/frontend/Tropicoblack/assets/js/games.js"></script>
-<script src="/frontend/Tropicoblack/assets/js/tools.js"></script>
-<script src="/frontend/Tropicoblack/assets/js/main.js"></script>
-<script src="/frontend/Tropicoblack/assets/js/ui.js"></script>
+<script src="{{ asset('frontend/Tropicoblack/js/jquery-ui.js') }}"></script>
+<script src="{{ asset('frontend/Tropicoblack/assets/vendors/popper/1.14.7/popper.min.js') }}"></script>
+<script src="{{ asset('frontend/Tropicoblack/assets/vendors/bootstrap/4.3.1/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('frontend/Tropicoblack/assets/vendors/swiper/4.5.0/js/swiper.min.js') }}"></script>
+<script src="{{ asset('frontend/Tropicoblack/assets/vendors/odometer/0.4.6/js/odometer.min.js') }}"></script>
+<script src="{{ asset('frontend/Tropicoblack/assets/vendors/bootstrap-select/1.13.9/js/bootstrap-select.min.js') }}"></script>
+<script src="{{ asset('frontend/Tropicoblack/js/alertify.min.js?v=8324') }}"></script>
+<script src="{{ asset('frontend/Tropicoblack/js/bonus.min.js?v=8324') }}"></script>
+<script src="{{ asset('frontend/Tropicoblack/assets/js/games.js') }}"></script>
+<script src="{{ asset('frontend/Tropicoblack/assets/js/tools.js') }}"></script>
+<script src="{{ asset('frontend/Tropicoblack/assets/js/main.js') }}"></script>
+<script src="{{ asset('frontend/Tropicoblack/assets/js/ui.js') }}"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
 
 <script type="text/javascript">
